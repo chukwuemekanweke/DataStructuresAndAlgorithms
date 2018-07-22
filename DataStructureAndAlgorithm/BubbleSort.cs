@@ -4,9 +4,14 @@ using System.Text;
 
 namespace DataStructureAndAlgorithm
 {
-    public class BubbleSort : ISort
+    public class BubbleSort :SortBase, ISort
     {
-       
+
+        public BubbleSort(bool showLogValue):base(showLogValue)
+        {
+
+        }
+
         public int[] Sort(ArrayTestBed testBed)
         {
             int temp;
@@ -24,7 +29,9 @@ namespace DataStructureAndAlgorithm
                         arrayObject[j + 1] = temp;
                     }
                 }
-                testBed.DispayElements();
+
+                if (ShowLog)
+                    testBed.DispayElements();
             }
             return arrayObject;
         }
@@ -46,7 +53,9 @@ namespace DataStructureAndAlgorithm
                         arrayObject[j + 1] = temp;
                     }
                 }
-                testBed.DispayElements();
+
+                if (ShowLog)
+                    testBed.DispayElements();
 
             }
             return arrayObject;
